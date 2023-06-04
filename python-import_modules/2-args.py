@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from sys import argv
 if __name__ == "__main__":
+    from sys import argv
     c = len(argv) - 1
     print("{:d} argument{}.".format(c, "" if c == 1 else "s"), end="")
     print("{}".format("." if c == 0 else ":"))
