@@ -1,12 +1,9 @@
 #!/usr/bin/python3
-import sys
+from sys import argv
 if __name__ == "__main__":
-    c = len(sys.argv) - 1
-    if c == 0:
-        print("0 arguments.")
-    elif c == 1:
-        print("1 argument.")
-    else:
-        print("{} arguments.".format(c))
-    for i in range(c):
-        print("{}: {}".format(i+1, sys.args[i + 1]))
+    c = len(argv) - 1
+    print("{} argument{}.".format(c, "" if c == 1 else "s"), end="")
+    print("{}".format("." if c == 0 else ":"))
+    if c > 1:
+        for i in range(1, c + 1):
+            print("{:d}: {}".format(i, argv[i]))
