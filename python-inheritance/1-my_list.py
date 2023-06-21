@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""Full attributes and methods of object"""
-
-
-def lookup(obj):
+class Mylist(list):
     """Full attributes and methods of object"""
-    return dir(obj)
+
+    def print_sorted(self):
+        """Full attributes and methods of object"""
+        return sorted(self)
