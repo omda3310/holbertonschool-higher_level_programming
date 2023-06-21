@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 class Mylist(list):
-    """Full attributes and methods of object"""
+    """Mylist class"""
 
     def print_sorted(self):
-        """Full attributes and methods of object"""
-        return sorted(self)
+        """Print sorted list"""
+        list_out = list.copy(self)
+        list.sort(list_out)
+        print(list_out)
