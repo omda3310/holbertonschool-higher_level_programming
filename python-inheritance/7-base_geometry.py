@@ -4,7 +4,10 @@
 
 class BaseGeometry:
     """Improve Geometry"""
-    
+
+    def __init__(self):
+        pass
+
     def area(self):
         """Public instance method"""
         raise Exception("area() is not implemented")
@@ -13,6 +16,6 @@ class BaseGeometry:
         """Public instance method validation"""
 
         if type(value) is not int:
-            raise TypeError("{:d} must be an integer".format(name))
+            raise TypeError("{:s} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("{:d} must be greater than 0".format(name))
+            raise ValueError("{:s} must be greater than 0".format(name))
