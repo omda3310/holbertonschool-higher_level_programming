@@ -4,10 +4,17 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """Class Rectangle that inherits from"""
+    """Class Rectangle that inherits from
+    Methods:
+          __init__(self, width, height)
+    """
 
     def __init__(self, width, height):
-        """Initialisation Rectangle"""
+        """Initialisation Rectangle
+        Args:
+            width (int): private
+            height (int): private
+        """
 
         self.intger_validator(self, "width", width)
         self.__width = width
