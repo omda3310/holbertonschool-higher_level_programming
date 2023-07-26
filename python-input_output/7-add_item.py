@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """add all arguments and save them to a file"""
 import sys
-from os.path import exists
+import os.path
 from json import load, dump
 
 
@@ -11,7 +11,7 @@ fl = "add_item.json"
 arg = sys.argv[1:]
 mlist = []
 
-if exists(fl):
+if os.path.exists(fl):
     mlist = load_from_json_file(fl)
 
 for i in range(1, len(arg)):
