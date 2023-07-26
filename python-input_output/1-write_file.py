@@ -3,6 +3,13 @@
 
 
 def append_write(filename="", text=""):
-    """Writing to a file"""
+    
+    """This function has two parameters: filename is the name of file and
+    text is the string to be writing in the text"""
+    
     with open(filename, mode='w', encoding='utf-8') as fl:
+        
+        """This function uses the with open method to open the file in writing mode(mode='w')
+        and utf-8 encoding(mode='utf-8')"""
+        
         return fl.write(text)
