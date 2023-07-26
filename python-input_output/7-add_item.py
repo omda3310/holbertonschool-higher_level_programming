@@ -7,6 +7,8 @@ save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 fl = "add_item.json"
+arg = sys.argv[1:]
+
 if __name__ == "__main__":
 
     if exists(fl):
@@ -14,5 +16,5 @@ if __name__ == "__main__":
     else:
         mlist = []
 
-    mlist.extend(sys.argv[1:])
+    mlist.extend(arg)
     save_to_json_file(mlist, fl)
