@@ -10,7 +10,7 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
 if __name__ == "__main__":
-    
+
     if exists("add_item.json"):
         mlist = load_from_json_file("add_item.json")
     else:
