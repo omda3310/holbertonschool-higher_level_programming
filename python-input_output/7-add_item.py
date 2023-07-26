@@ -11,7 +11,7 @@ fl = "add_item.json"
 arg = sys.argv[1:]
 
 if exists(fl):
-        mlist = load_from_json_file(fl)
+    mlist = load_from_json_file(fl)
 else:
     mlist = []
 
