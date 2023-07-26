@@ -4,17 +4,17 @@ import sys
 from os.path import exists
 from json import load, dump
 
-if __name__ == "__main__":
-    save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-    load_from_json_file = __import__
-    ('6-load_from_json_file').load_from_json_file
-    fl = "add_item.json"
-    arg = sys.argv[1:]
 
-    try:
-        mlist = load_from_json_file(fl)
-    except FileNotFoundError:
-        mlist = []
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+fl = "add_item.json"
+arg = sys.argv[1:]
+mlist = []
 
-    mlist.extend(arg)
-    save_to_json_file(mlist, fl)
+if exists(fl):
+    mlist = load_from_json_file(fl)
+
+for i in range(1, len(arg)):
+    mlist.append(arg[i])
+
+save_to_json_file(mlist, fl)
