@@ -12,10 +12,10 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 if __name__ == "__main__":
 
     if os.path.exists("add_item.json"):
-        mlist = load_from_json_file("add_item.json")
+        my_list = load_from_json_file("add_item.json")
     else:
-        mlist = []
+        my_list = []
     """Extend the list"""
-    mlist.extend(sys.argv[1:])
+    my_list.extend(sys.argv[1:])
     """Save the list"""
-    save_to_json_file(mlist, "add_item.json")
+    save_to_json_file(my_list, "add_item.json")
