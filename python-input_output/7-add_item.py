@@ -12,9 +12,11 @@ my_list = []
 fl = "add_item.json"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    """test"""
     if os.path.exists(fl):
         my_list = load_from_json_file(fl)
+    """load file"""
     for i in range(1, len(sys.argv)):
         my_list.append(sys.argv[i])
     """Save the list"""
