@@ -4,7 +4,7 @@
 and returns the number of characters added"""
 
 
-def append_write(filename="", text=""):
+def write_file(filename="", text=""):
     """This function has two parameters: filename is the name of file and
     text is the string to be writing in the text"""
 
