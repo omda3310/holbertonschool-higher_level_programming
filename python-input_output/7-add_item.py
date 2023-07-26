@@ -18,6 +18,6 @@ if __name__ == "__main__":
         my_list = load_from_json_file(fl)
     """load file"""
     for i in range(1, len(sys.argv)):
-        my_list.append(sys.argv[i])
+        my_list.extend(sys.argv[i])
     """Save the list"""
     save_to_json_file(my_list, fl)
