@@ -8,10 +8,10 @@ def append_write(filename="", text=""):
     """This function has two parameters: filename is the name of file and
     text is the string to be writing in the text"""
 
-    with open(filename, 'w', encoding='utf-8') as filename:
+    with open(filename, 'w', encoding="utf-8") as fl:
 
         """This function uses the with open method to open the file
         in writing mode(mode='w')
         and utf-8 encoding(mode='utf-8')"""
 
-        return filename.write(text)
+        return fl.write(text)
