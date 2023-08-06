@@ -12,12 +12,12 @@ def roman_to_int(roman_string):
         "M": 1000
     }
     sum = 0
-    prev_val = 1000
-    for ch in roman_string:
-        if ch in roman_numbers:
-            if roman_numbers[ch] <= prev_val:
-                sum += roman_numbers[ch]
-            else:
-                sum = roman_numbers[ch] - sum
-            prev_val = roman_numbers[ch]
+    prev_val = 0
+    for ch in reversed(roman_string):
+        value = roman_numbers.get(char, 0)
+        if value >= prev_val:
+                sum += value
+        else:
+            sum -= value
+        prev_val = value
     return sum
