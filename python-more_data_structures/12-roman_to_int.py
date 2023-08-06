@@ -1,22 +1,28 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if not roman_string or not isinstance(roman_string, str):
+    if not isinstance(roman_string, str) or roman_string is None:
         return 0
-    roman_numbers = {
-                     "I": 1,
-                     "V": 5,
-                     "X": 10,
-                     "L": 50,
-                     "C": 100,
-                     "D": 500,
-                     "M": 1000}
-    sum = 0
-    prev_val = 1000
-    for char in roman_string:
-        if char in roman_numbers:
-            if roman_numbers[char] <= prev_val:
-                sum += roman_numbers[char]
-            else:
-                    sum = roman_numbers[char] - sum
-            prev_val = roman_numbers[char]
-    return sum
+
+    roman_values = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+    total = 0
+    prev_value = 0
+
+    for char in roman_string[::-1]:
+        value = roman_values.get(char, 0)
+
+        if value >= prev_value:
+            total += value
+        else:
+            total -= value
+
+        prev_value = value
+
+    return total
