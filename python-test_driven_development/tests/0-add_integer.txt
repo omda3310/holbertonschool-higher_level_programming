@@ -1,0 +1,42 @@
+Test of module "'0-add_integer'"
+--------------------------------
+
+>>>add_integer = __import__('0-add_integer').add_integer
+
+Case1: 1 argument
+>>> add_integer(1)
+99
+
+Case2: 2  floats
+>>> add_integer(5.8, 1.2)
+6
+
+Case3: str
+>>> add_integer(3, 'coco')
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+Case4: Empty
+>>> add_integer()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Case5: Infinity float
+>>> add_integer(float('inf'), 6)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+Case6: Nan float
+>>> add_integer(float(Nan), 6)
+Traceback (most recent call last):
+...
+ValueError: cannot convert float Nan to integer
+
+Case7: Boolean
+>>> add_integer(True, 6)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
